@@ -1,5 +1,21 @@
-function add(a: number, b: number): number {
-  return a + b;
+interface IUser {
+  name: string;
+  location: string;
 }
 
-console.log(add(20, 25));
+function printUser(user: IUser): string {
+  return `${user.name} lives in ${user.location}`;
+}
+
+const NASIM: IUser = {
+  name: "Nasim",
+  location: "Bangladesh",
+};
+
+const ARR = {
+  one: 1,
+  two: 2,
+};
+
+console.log(printUser(NASIM));
+console.log(ARR.one);
