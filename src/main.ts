@@ -2,4 +2,4 @@ function add(a: number, b: number): number {
   return a + b;
 }
 
-console.log(add(5, 25));
+console.log(add(20, 25));
