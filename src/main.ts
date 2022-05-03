@@ -1,21 +1,14 @@
-interface IUser {
-  name: string;
-  location: string;
-}
+import express from "express";
+import "dotenv/config";
 
-function printUser(user: IUser): string {
-  return `${user.name} lives in ${user.location}`;
-}
+const DEFAULT_PORT = 3000;
+const APP = express();
+const PORT = process.env["PORT"] || DEFAULT_PORT;
 
-const NASIM: IUser = {
-  name: "Nasim",
-  location: "Bangladesh",
-};
+APP.get("/", (_, res) => {
+  res.send("Hello World!");
+});
 
-const ARR = {
-  one: 1,
-  two: 2,
-};
-
-console.log(printUser(NASIM));
-console.log(ARR.one);
+APP.listen(PORT, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+});
