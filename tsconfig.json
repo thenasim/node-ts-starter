@@ -2,7 +2,14 @@
   "extends": "@tsconfig/node16-strictest/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "src",
+    "paths": {
+      "$configs/*": ["./configs/*"],
+      "$middlewares/*": ["./middlewares/*"],
+      "$services/*": ["./services/*"],
+      "$routes/*": ["./routes/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.d.ts"]

@@ -93,6 +93,7 @@
       {
         "selector": "variable",
         "modifiers": ["const"],
+        "types": ["number", "string"],
         "format": ["UPPER_CASE"]
       },
       // For boolean variables

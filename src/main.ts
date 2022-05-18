@@ -1,14 +1,20 @@
 import express from "express";
 import "dotenv/config";
+import { getAllPosts } from "$services/postService";
 
 const DEFAULT_PORT = 3000;
-const APP = express();
-const PORT = process.env["PORT"] || DEFAULT_PORT;
+const app = express();
+const port = process.env["PORT"] || DEFAULT_PORT;
 
-APP.get("/", (_, res) => {
-  res.send("Hello World!");
+app.get("/", async (_, res) => {
+  res.send("Hello Bangladesh");
 });
 
-APP.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+app.get("/all-posts", async (_, res) => {
+  const posts = await getAllPosts();
+  res.send(posts);
+});
+
+app.listen(port, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
